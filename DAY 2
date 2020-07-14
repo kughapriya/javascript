@@ -1,0 +1,96 @@
+1.
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title> 
+        print current day and time 
+    </title> 
+</head> 
+  
+<body> 
+    <script type="text/javascript"> 
+        var myDate = new Date(); 
+        var myDay = myDate.getDay(); 
+        
+        // Array of days. 
+        var weekday = ['Sunday', 'Monday', 'Tuesday', 
+            'Wednesday', 'Thursday', 'Friday', 'Saturday' 
+        ]; 
+        document.write("Today is : " + weekday[myDay]); 
+        document.write("<br/>"); 
+        
+        // get hour value. 
+        var hours = myDate.getHours(); 
+        var ampm = hours >= 12 ? 'PM' : 'AM'; 
+        hours = hours % 12; 
+        hours = hours ? hours : 12; 
+        var minutes = myDate.getMinutes(); 
+        minutes = minutes < 10 ? '0' + minutes : minutes; 
+        var myTime = hours + " " + ampm + " : " + minutes +  
+            " : " + myDate.getMilliseconds(); 
+        document.write("\tCurrent time is : " + myTime); 
+    </script> 
+</body> 
+  
+</html> 
+
+2.
+<html>
+<body>
+<button onclick="window.print()">Click</button>
+</body>
+</html>
+
+3.
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <title> 
+        JavaScript  
+      | How to get current formatted date dd/mm/yyyy. 
+    </title> 
+</head> 
+  
+<body style="text-align:center;"
+      id="body"> 
+    <h1 style="color:green;">   
+            FCS   
+        </h1> 
+    <p id="GFG_UP" 
+       style="font-size: 15px;  
+              font-weight: bold;"> 
+    </p> 
+    <button onclick="gfg_Run()"> 
+        get Date 
+    </button> 
+    <p id="GFG_DOWN" 
+       style="color:green;  
+              font-size: 20px;  
+              font-weight: bold;"> 
+    </p> 
+    <script> 
+        var el_up = document.getElementById("GFG_UP"); 
+        var el_down = document.getElementById("GFG_DOWN"); 
+        var today = new Date(); 
+        el_up.innerHTML = today; 
+        var dd = today.getDate(); 
+        var mm = today.getMonth() + 1; 
+  
+        var yyyy = today.getFullYear(); 
+        if (dd < 10) { 
+            dd = '0' + dd; 
+        } 
+        if (mm < 10) { 
+            mm = '0' + mm; 
+        } 
+        var today = dd + '/' + mm + '/' + yyyy; 
+  
+        function gfg_Run() { 
+            el_down.innerHTML = today; 
+        } 
+    </script> 
+</body> 
+  
+</html> 
